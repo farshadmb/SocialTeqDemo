@@ -13,6 +13,10 @@
 		F8238F7225B227A500558B1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8238F7125B227A500558B1E /* Preview Assets.xcassets */; };
 		F8238F7D25B227A500558B1E /* SocialTeqDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8238F7C25B227A500558B1E /* SocialTeqDemoTests.swift */; };
 		F8238F8825B227A500558B1E /* SocialTeqDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8238F8725B227A500558B1E /* SocialTeqDemoUITests.swift */; };
+		F8238F9D25B22D3600558B1E /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8238F9C25B22D3600558B1E /* HomeModel.swift */; };
+		F8238FA525B22DE900558B1E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8238FA425B22DE900558B1E /* Category.swift */; };
+		F8238FAA25B22E5000558B1E /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8238FA925B22E5000558B1E /* Promotion.swift */; };
+		F8238FAF25B22ED400558B1E /* CategoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8238FAE25B22ED400558B1E /* CategoryDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		F8238F8325B227A500558B1E /* SocialTeqDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialTeqDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8238F8725B227A500558B1E /* SocialTeqDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialTeqDemoUITests.swift; sourceTree = "<group>"; };
 		F8238F8925B227A500558B1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8238F9C25B22D3600558B1E /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		F8238FA425B22DE900558B1E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		F8238FA925B22E5000558B1E /* Promotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
+		F8238FAE25B22ED400558B1E /* CategoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,10 @@
 		F8238F6925B227A400558B1E /* SocialTeqDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F8238F9B25B22D1500558B1E /* Data Layers */,
+				F8238F9A25B22D0D00558B1E /* Views */,
+				F8238F9925B22D0300558B1E /* ViewModels */,
+				F8238F9825B22CF500558B1E /* Models */,
 				F8238F6A25B227A400558B1E /* SocialTeqDemoApp.swift */,
 				F8238F6C25B227A400558B1E /* ContentView.swift */,
 				F8238F6E25B227A500558B1E /* Assets.xcassets */,
@@ -128,6 +140,38 @@
 				F8238F8925B227A500558B1E /* Info.plist */,
 			);
 			path = SocialTeqDemoUITests;
+			sourceTree = "<group>";
+		};
+		F8238F9825B22CF500558B1E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8238F9C25B22D3600558B1E /* HomeModel.swift */,
+				F8238FA425B22DE900558B1E /* Category.swift */,
+				F8238FA925B22E5000558B1E /* Promotion.swift */,
+				F8238FAE25B22ED400558B1E /* CategoryDetail.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F8238F9925B22D0300558B1E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F8238F9A25B22D0D00558B1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F8238F9B25B22D1500558B1E /* Data Layers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Data Layers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8238FAF25B22ED400558B1E /* CategoryDetail.swift in Sources */,
 				F8238F6D25B227A400558B1E /* ContentView.swift in Sources */,
 				F8238F6B25B227A400558B1E /* SocialTeqDemoApp.swift in Sources */,
+				F8238FAA25B22E5000558B1E /* Promotion.swift in Sources */,
+				F8238F9D25B22D3600558B1E /* HomeModel.swift in Sources */,
+				F8238FA525B22DE900558B1E /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
