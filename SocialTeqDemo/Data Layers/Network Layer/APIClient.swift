@@ -7,14 +7,22 @@
 
 import Foundation
 
+enum APIClientError: Error {
+    case noDataFound
+    case statusCode(Int)
+    case URLError(error: URLError)
+    case decode(error: DecodingError)
+    case otherError(Error)
+}
 
-class APIClient: NetworkSeviceInterceptorable {
-    
+class APIClient: NetworkServiceInterceptorable {
     
     let session: URLSession
+    let operationQueue: DispatchQueue
     
-    init(session: URLSession) {
+    init(session: URLSession, operationQueue: DispatchQueue = .main) {
         self.session = session
+        self.operationQueue = operationQueue
     }
     
     func send<T>(request: NetworkRequestConvertiable, decoder: DataDecoder, interceptor: NetworkIntercaptor, completion: @escaping ResultCompletion<T>) where T : Decodable {
@@ -27,12 +35,12 @@ class APIClient: NetworkSeviceInterceptorable {
                 case .success(let value):
                     self?.send(request: value, decoder: decoder, completion: completion)
                 case .failure(let error):
-                    completion(.failure(error))
+                    completion(.failure(APIClientError.otherError(error)))
                 }
             }
             
         }catch let error {
-            completion(.failure(error))
+            completion(.failure(APIClientError.otherError(error)))
         }
     }
     
@@ -45,89 +53,124 @@ class APIClient: NetworkSeviceInterceptorable {
                 case .success(let value):
                     self?.download(request: value, completion: completion)
                 case .failure(let error):
-                    completion(.failure(error))
+                    completion(.failure(APIClientError.otherError(error)))
                 }
             }
         }catch let error {
-            completion(.failure(error))
+            completion(.failure(APIClientError.otherError(error)))
         }
     }
     
     func send<T>(request: NetworkRequestConvertiable, decoder: DataDecoder, completion: @escaping ResultCompletion<T>) where T : Decodable {
         do {
             let request = try request.asURLRequest()
-            let downloadTask = session.dataTask(with: request) { (data, response, error) in
-                //TODO: implement later.
+            let queue = self.operationQueue
+            let task = session.dataTask(with: request) { (data, response, error) in
                 
                 guard error == nil else {
-                    completion(.failure(error!))
+                    queue.performSafe {
+                        if let error = error as? URLError {
+                            completion(.failure(APIClientError.URLError(error: error)))
+                        }
+                        completion(.failure(APIClientError.otherError(error!)))
+                    }
                     return
                 }
                 
-                //TODO: check status codes.
-                
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    //FIXME: return error
-                    completion(.failure(NSError()))
+                if let response = response as? HTTPURLResponse, !(200..<301).contains(response.statusCode) {
+                    queue.performSafe {
+                        completion(.failure(APIClientError.statusCode(response.statusCode)))
+                    }
                     return
                 }
                 
                 guard let data = data, data.count >= 0 else {
-                    completion(.failure(NSError()))
+                    queue.performSafe {
+                        completion(.failure(APIClientError.noDataFound))
+                    }
                     return
                 }
                 
                 do {
                     let returnObj = try decoder.decode(T.self, from: data)
-                    completion(.success(returnObj))
+                    queue.performSafe {
+                        completion(.success(returnObj))
+                    }
                 }catch let error {
-                    completion(.failure(error))
+                    queue.performSafe {
+                        
+                        
+                        if let error = error as? DecodingError {
+                            completion(.failure(APIClientError.decode(error: error)))
+                        }
+                        completion(.failure(APIClientError.otherError(error)))
+                    }
                 }
                 
             }
-            downloadTask.resume()
+            
+            task.resume()
             
         }catch let error {
-            completion(.failure(error))
+            operationQueue.performSafe {
+                completion(.failure(APIClientError.otherError(error)))
+            }
         }
     }
     
     func download(request: NetworkRequestConvertiable, completion: @escaping ResultCompletion<Data>) {
         do {
             let request = try request.asURLRequest()
+            let queue = self.operationQueue
+            
             let downloadTask = session.downloadTask(with: request) { (tempDownloadURL, response, error) in
                 
                 guard error == nil else {
-                    completion(.failure(error!))
+                    queue.performSafe {
+                        if let error = error as? URLError {
+                            completion(.failure(APIClientError.URLError(error: error)))
+                        }
+                        completion(.failure(APIClientError.otherError(error!)))
+                    }
                     return
                 }
                 
                 //TODO: check status codes.
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    //FIXME: return error
-                    completion(.failure(NSError()))
+                if let response = response as? HTTPURLResponse, !(200..<301).contains(response.statusCode) {
+                    queue.performSafe {
+                        completion(.failure(APIClientError.statusCode(response.statusCode)))
+                    }
                     return
                 }
                 
                 guard let outputfileURL = tempDownloadURL else {
-                    completion(.failure(NSError()))
+                    queue.performSafe {
+                        completion(.failure(APIClientError.noDataFound))
+                    }
                     return
                 }
                 
                 do {
+                    
                     let returnObj = try Data(contentsOf: outputfileURL)
-                    completion(.success(returnObj))
+                    queue.performSafe {
+                        completion(.success(returnObj))
+                    }
                 }catch let error {
-                    completion(.failure(error))
+                    queue.performSafe {
+                        completion(.failure(APIClientError.otherError(error)))
+                    }
                 }
             }
+            
             downloadTask.resume()
             
         }catch let error {
-            completion(.failure(error))
+            operationQueue.performSafe {
+                completion(.failure(APIClientError.otherError(error)))
+            }
         }
     }
-    
     
     
 }

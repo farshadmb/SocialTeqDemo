@@ -35,6 +35,7 @@ struct BearerTokenAunthenticator: NetworkIntercaptor {
         }
         
         inject(token: headerValue, into: &outputRequest)
+        completion(.success(outputRequest))
     }
     
     func inject(token: String, into request: inout URLRequest) {

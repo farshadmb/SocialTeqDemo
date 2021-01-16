@@ -19,7 +19,7 @@ protocol NetworkService {
 }
 
 //Abstract
-protocol NetworkSeviceInterceptorable: NetworkService {
+protocol NetworkServiceInterceptorable: NetworkService {
     
     func send<T: Decodable>(request: NetworkRequestConvertiable,
                             decoder: DataDecoder,
