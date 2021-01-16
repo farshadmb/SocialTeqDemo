@@ -36,6 +36,15 @@
 		F8238FDC25B2326C00558B1E /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8238FCA25B2326C00558B1E /* Poppins-Italic.ttf */; };
 		F8238FDD25B2326C00558B1E /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8238FCB25B2326C00558B1E /* Poppins-MediumItalic.ttf */; };
 		F8238FE225B2358200558B1E /* FontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8238FE125B2358200558B1E /* FontModifier.swift */; };
+		F8D308BF25B343FF00927789 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D308BE25B343FF00927789 /* NetworkService.swift */; };
+		F8D308C825B3467E00927789 /* DataEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D308C725B3467E00927789 /* DataEncoder.swift */; };
+		F8D308D025B3468800927789 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D308CF25B3468800927789 /* DataDecoder.swift */; };
+		F8D308D525B3480000927789 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D308D425B3480000927789 /* APIClient.swift */; };
+		F8D308DB25B3487100927789 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D308DA25B3487100927789 /* NetworkRequest.swift */; };
+		F8D308E325B349BC00927789 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D308E225B349BC00927789 /* HTTPMethod.swift */; };
+		F8D308E825B34AF700927789 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D308E725B34AF700927789 /* APIRequest.swift */; };
+		F8D308EE25B34EF400927789 /* NetworkInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D308ED25B34EF400927789 /* NetworkInterceptor.swift */; };
+		F8D308F625B3525600927789 /* BearerTokenAunthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D308F525B3525600927789 /* BearerTokenAunthenticator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +100,15 @@
 		F8238FCA25B2326C00558B1E /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		F8238FCB25B2326C00558B1E /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		F8238FE125B2358200558B1E /* FontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontModifier.swift; sourceTree = "<group>"; };
+		F8D308BE25B343FF00927789 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F8D308C725B3467E00927789 /* DataEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEncoder.swift; sourceTree = "<group>"; };
+		F8D308CF25B3468800927789 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
+		F8D308D425B3480000927789 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F8D308DA25B3487100927789 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		F8D308E225B349BC00927789 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		F8D308E725B34AF700927789 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		F8D308ED25B34EF400927789 /* NetworkInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptor.swift; sourceTree = "<group>"; };
+		F8D308F525B3525600927789 /* BearerTokenAunthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearerTokenAunthenticator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +227,7 @@
 		F8238F9B25B22D1500558B1E /* Data Layers */ = {
 			isa = PBXGroup;
 			children = (
+				F8D308BD25B343EC00927789 /* Network Layer */,
 			);
 			path = "Data Layers";
 			sourceTree = "<group>";
@@ -245,6 +264,46 @@
 				F8238FBB25B2326C00558B1E /* Poppins-ThinItalic.ttf */,
 			);
 			path = Poppins;
+			sourceTree = "<group>";
+		};
+		F8D308BD25B343EC00927789 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				F8D308EC25B34ED900927789 /* Interceptor */,
+				F8D308D925B3486100927789 /* Request */,
+				F8D308C625B3466B00927789 /* Encoder&Decoder */,
+				F8D308BE25B343FF00927789 /* NetworkService.swift */,
+				F8D308D425B3480000927789 /* APIClient.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		F8D308C625B3466B00927789 /* Encoder&Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				F8D308C725B3467E00927789 /* DataEncoder.swift */,
+				F8D308CF25B3468800927789 /* DataDecoder.swift */,
+			);
+			path = "Encoder&Decoder";
+			sourceTree = "<group>";
+		};
+		F8D308D925B3486100927789 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				F8D308DA25B3487100927789 /* NetworkRequest.swift */,
+				F8D308E225B349BC00927789 /* HTTPMethod.swift */,
+				F8D308E725B34AF700927789 /* APIRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		F8D308EC25B34ED900927789 /* Interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				F8D308ED25B34EF400927789 /* NetworkInterceptor.swift */,
+				F8D308F525B3525600927789 /* BearerTokenAunthenticator.swift */,
+			);
+			path = Interceptor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,12 +453,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D308D025B3468800927789 /* DataDecoder.swift in Sources */,
 				F8238FAF25B22ED400558B1E /* CategoryDetail.swift in Sources */,
 				F8238F6D25B227A400558B1E /* ContentView.swift in Sources */,
+				F8D308C825B3467E00927789 /* DataEncoder.swift in Sources */,
+				F8D308BF25B343FF00927789 /* NetworkService.swift in Sources */,
+				F8D308F625B3525600927789 /* BearerTokenAunthenticator.swift in Sources */,
+				F8D308D525B3480000927789 /* APIClient.swift in Sources */,
 				F8238F6B25B227A400558B1E /* SocialTeqDemoApp.swift in Sources */,
 				F8238FAA25B22E5000558B1E /* Promotion.swift in Sources */,
+				F8D308EE25B34EF400927789 /* NetworkInterceptor.swift in Sources */,
+				F8D308E825B34AF700927789 /* APIRequest.swift in Sources */,
 				F8238F9D25B22D3600558B1E /* HomeModel.swift in Sources */,
 				F8238FA525B22DE900558B1E /* Category.swift in Sources */,
+				F8D308E325B349BC00927789 /* HTTPMethod.swift in Sources */,
+				F8D308DB25B3487100927789 /* NetworkRequest.swift in Sources */,
 				F8238FE225B2358200558B1E /* FontModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
