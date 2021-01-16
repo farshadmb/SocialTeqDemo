@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        Text("Mitchell Cooper")
             .padding()
+            .poppinsFont(weight: .medium, size: 18.0)
+            
     }
 }
 
@@ -19,3 +21,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
