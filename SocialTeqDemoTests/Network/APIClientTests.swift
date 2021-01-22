@@ -54,19 +54,22 @@ class APIClientTests: XCTestCase {
             throw UnitTestError()
         }
         
-        let expection = self.expectation(description: "\(#function)")
+        let expection = self.expectation(description: "\(#function) testSimpleFailureSendRequest")
         
         mockService.send(request: try URLRequest(url: "https://jsonplaceholder.typicode.com/posts/1/comments", method: .get),
                          decoder: JSONDecoder()) { (result: Result<FakePost,Error>) in
+            print("\(#function) \(#line)")
             switch result {
             case .success(_):
                 XCTFail("The result should not has any output")
             case .failure(let error):
                 print(error)
-                expection.fulfill()
+                
             }
+            expection.fulfill()
         }
-        wait(for: [expection], timeout: 20.0)
+        
+        wait(for: [expection], timeout: 50.0)
         
     }
     

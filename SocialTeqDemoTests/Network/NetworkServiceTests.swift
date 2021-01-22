@@ -14,12 +14,16 @@ class MockNetworkService: NetworkService {
     var isExecuteSend = false
     var isExecuteDownload = false
     
-    func send<T>(request: NetworkRequestConvertiable, decoder: DataDecoder, completion: @escaping ResultCompletion<T>) where T : Decodable {
+    @discardableResult
+    func send<T>(request: NetworkRequestConvertiable, decoder: DataDecoder, completion: @escaping ResultCompletion<T>) -> NetworkTask? where T : Decodable {
         isExecuteSend = true
+        return nil
     }
     
-    func download(request: NetworkRequestConvertiable, completion: @escaping ResultCompletion<Data>) {
+    @discardableResult
+    func download(request: NetworkRequestConvertiable, completion: @escaping ResultCompletion<Data>) -> NetworkTask? {
         isExecuteDownload = true
+        return nil
     }
     
 }

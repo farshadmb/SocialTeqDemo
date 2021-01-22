@@ -25,43 +25,46 @@ class APIClient: NetworkServiceInterceptorable {
         self.operationQueue = operationQueue
     }
     
-    func send<T>(request: NetworkRequestConvertiable, decoder: DataDecoder, interceptor: NetworkIntercaptor, completion: @escaping ResultCompletion<T>) where T : Decodable {
+    func send<T>(request: NetworkRequestConvertiable, decoder: DataDecoder, interceptor: NetworkIntercaptor, completion: @escaping ResultCompletion<T>) -> NetworkTask? where T : Decodable  {
         
         do {
             let request = try request.asURLRequest()
+            let result = interceptor.adapt(request, for: session)
             
-            interceptor.adapt(request, for: session) { [weak self] (result) in
-                switch result {
-                case .success(let value):
-                    self?.send(request: value, decoder: decoder, completion: completion)
-                case .failure(let error):
-                    completion(.failure(APIClientError.otherError(error)))
-                }
+            switch result {
+            case .success(let value):
+                return self.send(request: value, decoder: decoder, completion: completion)
+            case .failure(let error):
+                completion(.failure(APIClientError.otherError(error)))
+                return nil
             }
             
         }catch let error {
             completion(.failure(APIClientError.otherError(error)))
+            return nil
         }
     }
     
-    func download(request: NetworkRequestConvertiable, interceptor: NetworkIntercaptor, completion: @escaping ResultCompletion<Data>) {
+    func download(request: NetworkRequestConvertiable, interceptor: NetworkIntercaptor, completion: @escaping ResultCompletion<Data>) -> NetworkTask? {
         do {
             let request = try request.asURLRequest()
+            let result = interceptor.adapt(request, for: session)
             
-            interceptor.adapt(request, for: session) {[weak self] (result) in
-                switch result {
-                case .success(let value):
-                    self?.download(request: value, completion: completion)
-                case .failure(let error):
-                    completion(.failure(APIClientError.otherError(error)))
-                }
+            switch result {
+            case .success(let value):
+                return self.download(request: value, completion: completion)
+            case .failure(let error):
+                completion(.failure(APIClientError.otherError(error)))
+                return nil
             }
+            
         }catch let error {
             completion(.failure(APIClientError.otherError(error)))
+            return nil
         }
     }
     
-    func send<T>(request: NetworkRequestConvertiable, decoder: DataDecoder, completion: @escaping ResultCompletion<T>) where T : Decodable {
+    func send<T>(request: NetworkRequestConvertiable, decoder: DataDecoder, completion: @escaping ResultCompletion<T>) -> NetworkTask? where T : Decodable {
         do {
             let request = try request.asURLRequest()
             let queue = self.operationQueue
@@ -71,7 +74,9 @@ class APIClient: NetworkServiceInterceptorable {
                     queue.performSafe {
                         if let error = error as? URLError {
                             completion(.failure(APIClientError.URLError(error: error)))
+                            return
                         }
+                        
                         completion(.failure(APIClientError.otherError(error!)))
                     }
                     return
@@ -99,26 +104,29 @@ class APIClient: NetworkServiceInterceptorable {
                 }catch let error {
                     queue.performSafe {
                         
-                        
                         if let error = error as? DecodingError {
                             completion(.failure(APIClientError.decode(error: error)))
+                            return 
                         }
+                        
                         completion(.failure(APIClientError.otherError(error)))
                     }
+                    
                 }
                 
             }
             
             task.resume()
-            
+            return task
         }catch let error {
             operationQueue.performSafe {
                 completion(.failure(APIClientError.otherError(error)))
             }
+            return nil
         }
     }
     
-    func download(request: NetworkRequestConvertiable, completion: @escaping ResultCompletion<Data>) {
+    func download(request: NetworkRequestConvertiable, completion: @escaping ResultCompletion<Data>) -> NetworkTask? {
         do {
             let request = try request.asURLRequest()
             let queue = self.operationQueue
@@ -164,11 +172,12 @@ class APIClient: NetworkServiceInterceptorable {
             }
             
             downloadTask.resume()
-            
+            return downloadTask
         }catch let error {
             operationQueue.performSafe {
                 completion(.failure(APIClientError.otherError(error)))
             }
+            return nil
         }
     }
     

@@ -9,12 +9,18 @@ import Foundation
 
 protocol NetworkIntercaptor {
     
-    func adapt(_ urlRequest: URLRequest, for session: URLSession, completion: @escaping (Result<URLRequest, Error>) -> Void)
+    /// <#Description#>
+    /// - Parameters:
+    ///   - urlRequest: <#urlRequest description#>
+    ///   - session: <#session description#>
+    ///   - completion: <#completion description#>
+    func adapt(_ urlRequest: URLRequest, for session: URLSession) -> Result<URLRequest, Error>
     
 }
 
 extension NetworkIntercaptor {
-    func adapt(_ urlRequest: URLRequest, for session: URLSession, completion: @escaping (Result<URLRequest, Error>) -> Void) {
-        completion(.success(urlRequest))
+    
+    func adapt(_ urlRequest: URLRequest, for session: URLSession) -> Result<URLRequest, Error> {
+        return .success(urlRequest)
     }
 }

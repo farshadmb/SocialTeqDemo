@@ -20,7 +20,7 @@ struct BearerTokenAunthenticator: NetworkIntercaptor {
     }
     
     
-    func adapt(_ urlRequest: URLRequest, for session: URLSession, completion: @escaping (Result<URLRequest, Error>) -> Void) {
+    func adapt(_ urlRequest: URLRequest, for session: URLSession) -> Result<URLRequest, Error> {
         var outputRequest = urlRequest
         
         let authorizationHeader = outputRequest.allHTTPHeaderFields?.first(where: { $0.key == "Authorization" })
@@ -30,12 +30,12 @@ struct BearerTokenAunthenticator: NetworkIntercaptor {
                 inject(token: headerValue, into: &outputRequest)
             }
             
-            completion(.success(outputRequest))
-            return
+            return .success(outputRequest)
+            
         }
         
         inject(token: headerValue, into: &outputRequest)
-        completion(.success(outputRequest))
+        return .success(outputRequest)
     }
     
     func inject(token: String, into request: inout URLRequest) {

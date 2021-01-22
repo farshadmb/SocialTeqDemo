@@ -30,6 +30,10 @@ extension URL: NetworkURLRequestConvertible {
     public func asURL() throws -> URL { self }
 }
 
+extension URL: NetworkRequestConvertiable {
+    func asURLRequest() throws -> URLRequest { try URLRequest(url: self, method: .get) }
+}
+
 extension URLRequest: NetworkRequestConvertiable {
     
     func asURLRequest() throws -> URLRequest { self }

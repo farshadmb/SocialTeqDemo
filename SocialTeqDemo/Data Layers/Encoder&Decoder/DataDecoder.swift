@@ -8,6 +8,11 @@
 import Foundation
 
 protocol DataDecoder {
+    
+    /// <#Description#>
+    /// - Parameters:
+    ///   - type: <#type description#>
+    ///   - data: <#data description#>
     func decode<T: Decodable>(_ type: T.Type, from data: Data) throws -> T
 }
 
