@@ -14,7 +14,7 @@ struct APIRequest : NetworkRequestConvertiable {
     let query: String?
     let url: NetworkURLRequestConvertible
     
-    init(url: NetworkURLRequestConvertible, method: HTTPMethod, body: Data?, query: String?) {
+    init(url: NetworkURLRequestConvertible, method: HTTPMethod, body: Data? = nil, query: String? = nil) {
         self.url = url
         self.method = method
         self.body = body

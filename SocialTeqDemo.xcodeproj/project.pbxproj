@@ -36,6 +36,9 @@
 		F8238FDC25B2326C00558B1E /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8238FCA25B2326C00558B1E /* Poppins-Italic.ttf */; };
 		F8238FDD25B2326C00558B1E /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8238FCB25B2326C00558B1E /* Poppins-MediumItalic.ttf */; };
 		F8238FE225B2358200558B1E /* FontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8238FE125B2358200558B1E /* FontModifier.swift */; };
+		F8325C9C25BD983200E2FC38 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325C9B25BD983200E2FC38 /* Service.swift */; };
+		F8325CA425BD9C8500E2FC38 /* HomeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325CA325BD9C8500E2FC38 /* HomeDataService.swift */; };
+		F8325CA925BDA69400E2FC38 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325CA825BDA69400E2FC38 /* CategoryService.swift */; };
 		F8A0423C25BB198F0071DE6F /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0423B25BB198F0071DE6F /* Cache.swift */; };
 		F8A0424125BB1BFA0071DE6F /* ImageMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0424025BB1BFA0071DE6F /* ImageMemoryCache.swift */; };
 		F8A0425925BB26E40071DE6F /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0425825BB26E40071DE6F /* ImageLoader.swift */; };
@@ -113,6 +116,9 @@
 		F8238FCA25B2326C00558B1E /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		F8238FCB25B2326C00558B1E /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		F8238FE125B2358200558B1E /* FontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontModifier.swift; sourceTree = "<group>"; };
+		F8325C9B25BD983200E2FC38 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		F8325CA325BD9C8500E2FC38 /* HomeDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataService.swift; sourceTree = "<group>"; };
+		F8325CA825BDA69400E2FC38 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		F8A0423B25BB198F0071DE6F /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		F8A0424025BB1BFA0071DE6F /* ImageMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryCache.swift; sourceTree = "<group>"; };
 		F8A0425825BB26E40071DE6F /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 			children = (
 				F8D3091725B3690C00927789 /* Extensions */,
 				F8238FB325B2324D00558B1E /* Assets */,
+				F8325C9A25BD981700E2FC38 /* Services */,
 				F8238F9B25B22D1500558B1E /* Data Layers */,
 				F8238F9A25B22D0D00558B1E /* Views */,
 				F8238F9925B22D0300558B1E /* ViewModels */,
@@ -299,6 +306,16 @@
 				F8238FBB25B2326C00558B1E /* Poppins-ThinItalic.ttf */,
 			);
 			path = Poppins;
+			sourceTree = "<group>";
+		};
+		F8325C9A25BD981700E2FC38 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F8325C9B25BD983200E2FC38 /* Service.swift */,
+				F8325CA325BD9C8500E2FC38 /* HomeDataService.swift */,
+				F8325CA825BDA69400E2FC38 /* CategoryService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		F8A0423A25BB19780071DE6F /* Cache Layer */ = {
@@ -526,7 +543,10 @@
 			files = (
 				F8D308D025B3468800927789 /* DataDecoder.swift in Sources */,
 				F8238FAF25B22ED400558B1E /* CategoryDetail.swift in Sources */,
+				F8325C9C25BD983200E2FC38 /* Service.swift in Sources */,
+				F8325CA925BDA69400E2FC38 /* CategoryService.swift in Sources */,
 				F8A0425925BB26E40071DE6F /* ImageLoader.swift in Sources */,
+				F8325CA425BD9C8500E2FC38 /* HomeDataService.swift in Sources */,
 				F8238F6D25B227A400558B1E /* ContentView.swift in Sources */,
 				F8D3091925B3691F00927789 /* DispatchQueue+Additional.swift in Sources */,
 				F8A0428425BB3E170071DE6F /* HomeViewModel.swift in Sources */,

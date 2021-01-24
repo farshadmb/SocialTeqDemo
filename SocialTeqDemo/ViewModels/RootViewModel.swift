@@ -10,4 +10,14 @@ import Combine
 
 final class RootViewModel: ObservableObject {
     
+    enum State {
+        case idle
+        case loading
+        case error(Error)
+    }
+    
+    enum Event {
+        case didSelectTabBar(atIndex: Int)
+    }
+    
 }
