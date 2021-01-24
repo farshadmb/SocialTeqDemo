@@ -11,7 +11,7 @@ import SwiftUI
 struct SocialTeqDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView(viewModel: RootViewModel())
         }
     }
 }
