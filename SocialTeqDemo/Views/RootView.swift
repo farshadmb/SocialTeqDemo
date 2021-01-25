@@ -23,9 +23,8 @@ struct RootView: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             
             TabView(selection: $current){
-                Text("Home")
+                HomeView()
                     .tag(0)
-                
                 Text("Category")
                     .tag(1)
                 Text("Account")
@@ -33,6 +32,7 @@ struct RootView: View {
                 Text("QA")
                     .tag(3)
             }
+            .padding(.bottom, 45.0)
             Spacer(minLength: 1)
                 .foregroundColor(.black)
             

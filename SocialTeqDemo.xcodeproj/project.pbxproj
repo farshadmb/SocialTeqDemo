@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F822AB0A25BDC8B800D1321F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB0925BDC8B800D1321F /* HomeView.swift */; };
+		F822AB0F25BDE10300D1321F /* HomeHGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB0E25BDE10300D1321F /* HomeHGrid.swift */; };
+		F822AB1425BDEB6500D1321F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB1325BDEB6500D1321F /* CardView.swift */; };
+		F822AB1925BE0F1F00D1321F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB1825BE0F1F00D1321F /* ContentView.swift */; };
+		F822AB1E25BE113B00D1321F /* TextBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB1D25BE113B00D1321F /* TextBadgeView.swift */; };
+		F822AB2625BE140A00D1321F /* ServiceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB2525BE140A00D1321F /* ServiceItemView.swift */; };
+		F822AB2B25BF0F2400D1321F /* PromotionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB2A25BF0F2400D1321F /* PromotionItemView.swift */; };
+		F822AB3025BF184700D1321F /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB2F25BF184700D1321F /* HomeHeaderView.swift */; };
+		F822AB3525BF1ED600D1321F /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB3425BF1ED600D1321F /* RoundedCorner.swift */; };
 		F8238F6B25B227A400558B1E /* SocialTeqDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8238F6A25B227A400558B1E /* SocialTeqDemoApp.swift */; };
 		F8238F6F25B227A500558B1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8238F6E25B227A500558B1E /* Assets.xcassets */; };
 		F8238F7225B227A500558B1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8238F7125B227A500558B1E /* Preview Assets.xcassets */; };
@@ -83,6 +92,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F822AB0925BDC8B800D1321F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F822AB0E25BDE10300D1321F /* HomeHGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHGrid.swift; sourceTree = "<group>"; };
+		F822AB1325BDEB6500D1321F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F822AB1825BE0F1F00D1321F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F822AB1D25BE113B00D1321F /* TextBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBadgeView.swift; sourceTree = "<group>"; };
+		F822AB2525BE140A00D1321F /* ServiceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceItemView.swift; sourceTree = "<group>"; };
+		F822AB2A25BF0F2400D1321F /* PromotionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionItemView.swift; sourceTree = "<group>"; };
+		F822AB2F25BF184700D1321F /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		F822AB3425BF1ED600D1321F /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		F8238F6725B227A400558B1E /* SocialTeqDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialTeqDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8238F6A25B227A400558B1E /* SocialTeqDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialTeqDemoApp.swift; sourceTree = "<group>"; };
 		F8238F6E25B227A500558B1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -172,6 +190,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F822AB0825BDC88000D1321F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F822AB0925BDC8B800D1321F /* HomeView.swift */,
+				F822AB0E25BDE10300D1321F /* HomeHGrid.swift */,
+				F822AB2525BE140A00D1321F /* ServiceItemView.swift */,
+				F822AB2A25BF0F2400D1321F /* PromotionItemView.swift */,
+				F822AB2F25BF184700D1321F /* HomeHeaderView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		F8238F5E25B227A400558B1E = {
 			isa = PBXGroup;
 			children = (
@@ -263,8 +293,13 @@
 			isa = PBXGroup;
 			children = (
 				F8325CB025BDAAEE00E2FC38 /* RootView.swift */,
+				F822AB0825BDC88000D1321F /* Home */,
 				F8325CBA25BDAEEF00E2FC38 /* Tab Section */,
 				F8238FE125B2358200558B1E /* FontModifier.swift */,
+				F822AB1325BDEB6500D1321F /* CardView.swift */,
+				F822AB1D25BE113B00D1321F /* TextBadgeView.swift */,
+				F822AB1825BE0F1F00D1321F /* ContentView.swift */,
+				F822AB3425BF1ED600D1321F /* RoundedCorner.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -556,8 +591,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D308D025B3468800927789 /* DataDecoder.swift in Sources */,
+				F822AB2625BE140A00D1321F /* ServiceItemView.swift in Sources */,
 				F8238FAF25B22ED400558B1E /* CategoryDetail.swift in Sources */,
 				F8325C9C25BD983200E2FC38 /* Service.swift in Sources */,
+				F822AB0A25BDC8B800D1321F /* HomeView.swift in Sources */,
 				F8325CA925BDA69400E2FC38 /* CategoryService.swift in Sources */,
 				F8A0425925BB26E40071DE6F /* ImageLoader.swift in Sources */,
 				F8325CA425BD9C8500E2FC38 /* HomeDataService.swift in Sources */,
@@ -570,19 +607,26 @@
 				F8D308C825B3467E00927789 /* DataEncoder.swift in Sources */,
 				F8A0427F25BB3E0C0071DE6F /* RootViewModel.swift in Sources */,
 				F8D308BF25B343FF00927789 /* NetworkService.swift in Sources */,
+				F822AB0F25BDE10300D1321F /* HomeHGrid.swift in Sources */,
+				F822AB1E25BE113B00D1321F /* TextBadgeView.swift in Sources */,
 				F8D308F625B3525600927789 /* BearerTokenAunthenticator.swift in Sources */,
 				F8325CB125BDAAEE00E2FC38 /* RootView.swift in Sources */,
 				F8D308D525B3480000927789 /* APIClient.swift in Sources */,
 				F8238F6B25B227A400558B1E /* SocialTeqDemoApp.swift in Sources */,
 				F8238FAA25B22E5000558B1E /* Promotion.swift in Sources */,
 				F8A0423C25BB198F0071DE6F /* Cache.swift in Sources */,
+				F822AB3025BF184700D1321F /* HomeHeaderView.swift in Sources */,
+				F822AB1925BE0F1F00D1321F /* ContentView.swift in Sources */,
 				F8D308EE25B34EF400927789 /* NetworkInterceptor.swift in Sources */,
+				F822AB2B25BF0F2400D1321F /* PromotionItemView.swift in Sources */,
 				F8D308E825B34AF700927789 /* APIRequest.swift in Sources */,
 				F8238F9D25B22D3600558B1E /* HomeModel.swift in Sources */,
 				F8238FA525B22DE900558B1E /* Category.swift in Sources */,
 				F8D308E325B349BC00927789 /* HTTPMethod.swift in Sources */,
 				F8D308DB25B3487100927789 /* NetworkRequest.swift in Sources */,
 				F8A0428925BB3E270071DE6F /* ServiceViewModel.swift in Sources */,
+				F822AB1425BDEB6500D1321F /* CardView.swift in Sources */,
+				F822AB3525BF1ED600D1321F /* RoundedCorner.swift in Sources */,
 				F8238FE225B2358200558B1E /* FontModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

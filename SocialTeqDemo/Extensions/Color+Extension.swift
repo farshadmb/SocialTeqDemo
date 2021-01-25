@@ -46,6 +46,8 @@ extension Color {
     static let lightBlue = Color(hex: "#E6EBFA")
     static let redBlack = Color(hex: "#FB2F5F")
     static let otherBlue = Color(hex: "#22C8EF")
+    static let lightBlue2 = Color(hex: "#3E96AC")
+
     static let viewBackground = Color(hex: "#E5E5E5")
     
     struct TabBar {
