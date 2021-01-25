@@ -16,6 +16,8 @@
 		F822AB2B25BF0F2400D1321F /* PromotionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB2A25BF0F2400D1321F /* PromotionItemView.swift */; };
 		F822AB3025BF184700D1321F /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB2F25BF184700D1321F /* HomeHeaderView.swift */; };
 		F822AB3525BF1ED600D1321F /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB3425BF1ED600D1321F /* RoundedCorner.swift */; };
+		F822AB3B25BF331800D1321F /* ServiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB3A25BF331800D1321F /* ServiceDetailView.swift */; };
+		F822AB4325BF349200D1321F /* ServicePaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB4225BF349200D1321F /* ServicePaymentView.swift */; };
 		F8238F6B25B227A400558B1E /* SocialTeqDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8238F6A25B227A400558B1E /* SocialTeqDemoApp.swift */; };
 		F8238F6F25B227A500558B1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8238F6E25B227A500558B1E /* Assets.xcassets */; };
 		F8238F7225B227A500558B1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8238F7125B227A500558B1E /* Preview Assets.xcassets */; };
@@ -101,6 +103,8 @@
 		F822AB2A25BF0F2400D1321F /* PromotionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionItemView.swift; sourceTree = "<group>"; };
 		F822AB2F25BF184700D1321F /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		F822AB3425BF1ED600D1321F /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		F822AB3A25BF331800D1321F /* ServiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailView.swift; sourceTree = "<group>"; };
+		F822AB4225BF349200D1321F /* ServicePaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePaymentView.swift; sourceTree = "<group>"; };
 		F8238F6725B227A400558B1E /* SocialTeqDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialTeqDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8238F6A25B227A400558B1E /* SocialTeqDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialTeqDemoApp.swift; sourceTree = "<group>"; };
 		F8238F6E25B227A500558B1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -202,6 +206,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		F822AB3925BF2FAD00D1321F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F822AB3A25BF331800D1321F /* ServiceDetailView.swift */,
+				F822AB4225BF349200D1321F /* ServicePaymentView.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		F8238F5E25B227A400558B1E = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +308,7 @@
 				F8325CB025BDAAEE00E2FC38 /* RootView.swift */,
 				F822AB0825BDC88000D1321F /* Home */,
 				F8325CBA25BDAEEF00E2FC38 /* Tab Section */,
+				F822AB3925BF2FAD00D1321F /* Category */,
 				F8238FE125B2358200558B1E /* FontModifier.swift */,
 				F822AB1325BDEB6500D1321F /* CardView.swift */,
 				F822AB1D25BE113B00D1321F /* TextBadgeView.swift */,
@@ -597,6 +611,7 @@
 				F822AB0A25BDC8B800D1321F /* HomeView.swift in Sources */,
 				F8325CA925BDA69400E2FC38 /* CategoryService.swift in Sources */,
 				F8A0425925BB26E40071DE6F /* ImageLoader.swift in Sources */,
+				F822AB3B25BF331800D1321F /* ServiceDetailView.swift in Sources */,
 				F8325CA425BD9C8500E2FC38 /* HomeDataService.swift in Sources */,
 				F8D3091925B3691F00927789 /* DispatchQueue+Additional.swift in Sources */,
 				F8325CCA25BDB14700E2FC38 /* Color+Extension.swift in Sources */,
@@ -626,6 +641,7 @@
 				F8D308DB25B3487100927789 /* NetworkRequest.swift in Sources */,
 				F8A0428925BB3E270071DE6F /* ServiceViewModel.swift in Sources */,
 				F822AB1425BDEB6500D1321F /* CardView.swift in Sources */,
+				F822AB4325BF349200D1321F /* ServicePaymentView.swift in Sources */,
 				F822AB3525BF1ED600D1321F /* RoundedCorner.swift in Sources */,
 				F8238FE225B2358200558B1E /* FontModifier.swift in Sources */,
 			);

@@ -15,11 +15,13 @@ struct CardView<ContentView: View>: View {
     let shadowRadius: CGFloat
     let shadowPoint: CGPoint
     let padding : CGFloat
+    let backgroundColor: Color
     
     init(radius: CGFloat = 12.0,
          corners: UIRectCorner = .allCorners,
          shadowRadius: CGFloat = 16, shadowPoint: CGPoint = .init(x: 0, y: 4),
          padding: CGFloat = 16.0,
+         backgroundColor: Color = .white,
          @ViewBuilder builder: @escaping () -> ContentView) {
         contentBuilder = builder
         cornerRadius = radius
@@ -27,6 +29,7 @@ struct CardView<ContentView: View>: View {
         self.shadowRadius = shadowRadius
         self.shadowPoint = shadowPoint
         self.padding = padding
+        self.backgroundColor = backgroundColor
     }
     
     var body: some View {
@@ -34,7 +37,7 @@ struct CardView<ContentView: View>: View {
             contentBuilder()
         }
         .padding(padding)
-        .background(Color.white)
+        .background(backgroundColor)
         .cornerRadius(cornerRadius, corners: cornersEdge)
         .shadow(color: Color.Shadow.eightPercent, radius: self.shadowRadius, x: shadowPoint.x, y: shadowPoint.y)
         
