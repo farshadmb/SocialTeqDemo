@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F81E58CC25BF768E001AAED0 /* Image+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81E58CB25BF768E001AAED0 /* Image+ImageLoader.swift */; };
 		F822AB0A25BDC8B800D1321F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB0925BDC8B800D1321F /* HomeView.swift */; };
 		F822AB0F25BDE10300D1321F /* HomeHGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB0E25BDE10300D1321F /* HomeHGrid.swift */; };
 		F822AB1425BDEB6500D1321F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB1325BDEB6500D1321F /* CardView.swift */; };
-		F822AB1925BE0F1F00D1321F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB1825BE0F1F00D1321F /* ContentView.swift */; };
+		F822AB1925BE0F1F00D1321F /* MakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB1825BE0F1F00D1321F /* MakeView.swift */; };
 		F822AB1E25BE113B00D1321F /* TextBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB1D25BE113B00D1321F /* TextBadgeView.swift */; };
 		F822AB2625BE140A00D1321F /* ServiceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB2525BE140A00D1321F /* ServiceItemView.swift */; };
 		F822AB2B25BF0F2400D1321F /* PromotionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB2A25BF0F2400D1321F /* PromotionItemView.swift */; };
@@ -18,6 +19,9 @@
 		F822AB3525BF1ED600D1321F /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB3425BF1ED600D1321F /* RoundedCorner.swift */; };
 		F822AB3B25BF331800D1321F /* ServiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB3A25BF331800D1321F /* ServiceDetailView.swift */; };
 		F822AB4325BF349200D1321F /* ServicePaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB4225BF349200D1321F /* ServicePaymentView.swift */; };
+		F822AB4825BF450600D1321F /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB4725BF450600D1321F /* AppDIContainer.swift */; };
+		F822AB5125BF4EBC00D1321F /* PromotionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB5025BF4EBC00D1321F /* PromotionViewModel.swift */; };
+		F822AB5625BF510E00D1321F /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822AB5525BF510E00D1321F /* ActivityIndicatorView.swift */; };
 		F8238F6B25B227A400558B1E /* SocialTeqDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8238F6A25B227A400558B1E /* SocialTeqDemoApp.swift */; };
 		F8238F6F25B227A500558B1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8238F6E25B227A500558B1E /* Assets.xcassets */; };
 		F8238F7225B227A500558B1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8238F7125B227A500558B1E /* Preview Assets.xcassets */; };
@@ -94,10 +98,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F81E58CB25BF768E001AAED0 /* Image+ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ImageLoader.swift"; sourceTree = "<group>"; };
 		F822AB0925BDC8B800D1321F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F822AB0E25BDE10300D1321F /* HomeHGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHGrid.swift; sourceTree = "<group>"; };
 		F822AB1325BDEB6500D1321F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		F822AB1825BE0F1F00D1321F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F822AB1825BE0F1F00D1321F /* MakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeView.swift; sourceTree = "<group>"; };
 		F822AB1D25BE113B00D1321F /* TextBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBadgeView.swift; sourceTree = "<group>"; };
 		F822AB2525BE140A00D1321F /* ServiceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceItemView.swift; sourceTree = "<group>"; };
 		F822AB2A25BF0F2400D1321F /* PromotionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionItemView.swift; sourceTree = "<group>"; };
@@ -105,6 +110,9 @@
 		F822AB3425BF1ED600D1321F /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		F822AB3A25BF331800D1321F /* ServiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailView.swift; sourceTree = "<group>"; };
 		F822AB4225BF349200D1321F /* ServicePaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePaymentView.swift; sourceTree = "<group>"; };
+		F822AB4725BF450600D1321F /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		F822AB5025BF4EBC00D1321F /* PromotionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionViewModel.swift; sourceTree = "<group>"; };
+		F822AB5525BF510E00D1321F /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		F8238F6725B227A400558B1E /* SocialTeqDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialTeqDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8238F6A25B227A400558B1E /* SocialTeqDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialTeqDemoApp.swift; sourceTree = "<group>"; };
 		F8238F6E25B227A500558B1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -215,6 +223,19 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		F822AB4C25BF476600D1321F /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				F8238FE125B2358200558B1E /* FontModifier.swift */,
+				F822AB1325BDEB6500D1321F /* CardView.swift */,
+				F822AB1D25BE113B00D1321F /* TextBadgeView.swift */,
+				F822AB1825BE0F1F00D1321F /* MakeView.swift */,
+				F822AB3425BF1ED600D1321F /* RoundedCorner.swift */,
+				F822AB5525BF510E00D1321F /* ActivityIndicatorView.swift */,
+			);
+			path = Extra;
+			sourceTree = "<group>";
+		};
 		F8238F5E25B227A400558B1E = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +269,7 @@
 				F8238F6A25B227A400558B1E /* SocialTeqDemoApp.swift */,
 				F8238F7325B227A500558B1E /* Info.plist */,
 				F8238F7025B227A500558B1E /* Preview Content */,
+				F822AB4725BF450600D1321F /* AppDIContainer.swift */,
 			);
 			path = SocialTeqDemo;
 			sourceTree = "<group>";
@@ -298,6 +320,7 @@
 				F8A0427E25BB3E0C0071DE6F /* RootViewModel.swift */,
 				F8A0428325BB3E170071DE6F /* HomeViewModel.swift */,
 				F8A0428825BB3E270071DE6F /* ServiceViewModel.swift */,
+				F822AB5025BF4EBC00D1321F /* PromotionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -309,11 +332,7 @@
 				F822AB0825BDC88000D1321F /* Home */,
 				F8325CBA25BDAEEF00E2FC38 /* Tab Section */,
 				F822AB3925BF2FAD00D1321F /* Category */,
-				F8238FE125B2358200558B1E /* FontModifier.swift */,
-				F822AB1325BDEB6500D1321F /* CardView.swift */,
-				F822AB1D25BE113B00D1321F /* TextBadgeView.swift */,
-				F822AB1825BE0F1F00D1321F /* ContentView.swift */,
-				F822AB3425BF1ED600D1321F /* RoundedCorner.swift */,
+				F822AB4C25BF476600D1321F /* Extra */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -453,6 +472,7 @@
 				F8D3091825B3691F00927789 /* DispatchQueue+Additional.swift */,
 				F8A0425D25BB2A9E0071DE6F /* AnyPublisher+Additional.swift */,
 				F8325CC925BDB14700E2FC38 /* Color+Extension.swift */,
+				F81E58CB25BF768E001AAED0 /* Image+ImageLoader.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -606,7 +626,10 @@
 			files = (
 				F8D308D025B3468800927789 /* DataDecoder.swift in Sources */,
 				F822AB2625BE140A00D1321F /* ServiceItemView.swift in Sources */,
+				F822AB5125BF4EBC00D1321F /* PromotionViewModel.swift in Sources */,
+				F822AB4825BF450600D1321F /* AppDIContainer.swift in Sources */,
 				F8238FAF25B22ED400558B1E /* CategoryDetail.swift in Sources */,
+				F822AB5625BF510E00D1321F /* ActivityIndicatorView.swift in Sources */,
 				F8325C9C25BD983200E2FC38 /* Service.swift in Sources */,
 				F822AB0A25BDC8B800D1321F /* HomeView.swift in Sources */,
 				F8325CA925BDA69400E2FC38 /* CategoryService.swift in Sources */,
@@ -615,6 +638,7 @@
 				F8325CA425BD9C8500E2FC38 /* HomeDataService.swift in Sources */,
 				F8D3091925B3691F00927789 /* DispatchQueue+Additional.swift in Sources */,
 				F8325CCA25BDB14700E2FC38 /* Color+Extension.swift in Sources */,
+				F81E58CC25BF768E001AAED0 /* Image+ImageLoader.swift in Sources */,
 				F8325CBF25BDAF0D00E2FC38 /* TabBarButton.swift in Sources */,
 				F8A0428425BB3E170071DE6F /* HomeViewModel.swift in Sources */,
 				F8A0425E25BB2A9E0071DE6F /* AnyPublisher+Additional.swift in Sources */,
@@ -631,7 +655,7 @@
 				F8238FAA25B22E5000558B1E /* Promotion.swift in Sources */,
 				F8A0423C25BB198F0071DE6F /* Cache.swift in Sources */,
 				F822AB3025BF184700D1321F /* HomeHeaderView.swift in Sources */,
-				F822AB1925BE0F1F00D1321F /* ContentView.swift in Sources */,
+				F822AB1925BE0F1F00D1321F /* MakeView.swift in Sources */,
 				F8D308EE25B34EF400927789 /* NetworkInterceptor.swift in Sources */,
 				F822AB2B25BF0F2400D1321F /* PromotionItemView.swift in Sources */,
 				F8D308E825B34AF700927789 /* APIRequest.swift in Sources */,

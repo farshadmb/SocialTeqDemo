@@ -121,4 +121,28 @@ class APIClientTests: XCTestCase {
         
     }
     
+    func testAuthenticatedSuccessCategorySendRequest() throws {
+        guard let mockService = authenticatiedService else {
+            throw UnitTestError()
+        }
+        
+        let expection = self.expectation(description: "\(#function)")
+        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmZjNWM2YzFjNjU3NDAwMGJkOThlYjciLCJpYXQiOjE2MTAzNzQyNTN9.fitW1STDlJ0v87vLEzSPwENxLlP8FeYBRYEzdDX0LTU"
+        
+        mockService.send(request: try URLRequest(url: "https://api-dot-rafiji-staging.appspot.com/customer/v2/categories/carwash/services", method: .get),
+                         decoder: JSONDecoder(),
+                         interceptor: BearerTokenAunthenticator(token: token)) { (result: Result<CategoryDetail,Error>) in
+            switch result {
+            case .success(let posts):
+                print(posts)
+                expection.fulfill()
+            case .failure(let error):
+                XCTFail("\(error): \(error.localizedDescription)")
+            }
+        }
+        
+        wait(for: [expection], timeout: 20.0)
+        
+    }
+    
 }

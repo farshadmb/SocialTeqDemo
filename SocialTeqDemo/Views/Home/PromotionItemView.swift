@@ -12,12 +12,15 @@ struct PromotionItemView: View {
     
     @State var title: String = "Time to TRAVEL!"
     @State var descriptions: String = "If you want to travel, this is best opportunity!"
+    @State var image: URL? = nil
     
     var body: some View {
         
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
             Image("Airplane")
                 .resizable()
+                .fetchingRemoteImage(from: image)
+                .aspectRatio(contentMode: .fit)
                 .clipped()
             
             VStack(alignment: .leading, spacing: 10.0){

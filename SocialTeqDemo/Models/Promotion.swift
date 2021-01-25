@@ -12,7 +12,7 @@ struct Promotion: Codable {
 }
 
 struct PromotionImage: Codable {
-    let originalURL: String
+    let originalURL: URL?
 
     enum CodingKeys: String, CodingKey {
         case originalURL = "originalUrl"

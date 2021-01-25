@@ -12,6 +12,7 @@ struct ServicePaymentView: View {
     @State var title: String = "Carwash"
     @State var descriptions: String = "Carwash"
     @State var extraInfo: String = "Basic | Eco | Pro | VIP"
+    @State var image: URL? = nil
     @State var price: String = "40.00 QAR"
     @State var discountedPercent: String = "%20"
     @State var discountedPrice: String = "49.00 QAR"
@@ -21,13 +22,16 @@ struct ServicePaymentView: View {
         CardView(radius: 16.0,
                  shadowRadius: 0, padding: 16.0,
                  backgroundColor:color) {
-            VStack(alignment: .leading, spacing: 10.0) {
+            VStack(alignment: .leading) {
                 HStack(alignment: .top) {
                     Image("large")
                         .resizable()
+                        .fetchingRemoteImage(from: image)
                         .frame(width: 40, height: 40)
-                    Spacer(minLength: 24.0)
+                        .aspectRatio(contentMode: .fit)
+                        .clipped()
                     
+                    Spacer(minLength: 24.0)
                     if discountedPercent.isEmpty == false {
                         TextBadgeView(text: discountedPercent, color: .redColor)
                     }else {
@@ -35,32 +39,23 @@ struct ServicePaymentView: View {
                     }
                 }
                 Spacer(minLength: 12.0)
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 2.0) {
                     Text(title)
-                        .lineSpacing(25.20)
                         .lineLimit(1)
-                        .frame(alignment: .topLeading)
                         .poppinsFont(weight: .semibold, size: 18.0)
                         .foregroundColor(color != .grayLight ? .white : .grayBlack)
-                    Spacer(minLength: 1)
                     Text(descriptions)
-                        .fontWeight(.semibold)
                         .font(.caption)
-                        .frame(alignment: .topLeading)
-                        .lineSpacing(16.80)
-                        .lineLimit(2)
+                        .lineLimit(1)
                         .poppinsFont(weight: .semibold, size: 12.0)
                         .foregroundColor(color != .grayLight ? .white : .grayBlack)
-                    Spacer(minLength: 6)
                     Text(extraInfo)
                         .italic()
-                        .frame(alignment:.topLeading)
-                        .lineSpacing(19.20)
-                        .lineLimit(1)
+                        .lineLimit(2)
                         .poppinsFont(weight: .regular, size: 12.0)
-                        .foregroundColor(color != .grayLight ? .white : .grayBlack)
+                        .foregroundColor(color != .grayLight ? .white : .grayMedium)
                 }
-                Spacer(minLength: 5.0)
+                Spacer(minLength: 15.0)
                 HStack(alignment: .center) {
                     
                     Text(discountedPrice.isEmpty ? price : discountedPrice)

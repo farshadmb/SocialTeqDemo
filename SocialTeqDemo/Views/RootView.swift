@@ -23,7 +23,7 @@ struct RootView: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             
             TabView(selection: $current){
-                HomeView()
+                HomeView(viewModel: viewModel.diContainer.homeViewModel)
                     .tag(0)
                 Text("Category")
                     .tag(1)
@@ -54,10 +54,11 @@ struct RootView: View {
 }
 
 struct RootView_Previews: PreviewProvider {
+    
     static var previews: some View {
         Group {
-            RootView(viewModel: RootViewModel())
-            RootView(viewModel: RootViewModel())
+            RootView(viewModel: AppDIContainer().rootViewModel)
+            RootView(viewModel: AppDIContainer().rootViewModel)
                 .previewDevice("iPhone 11")
         }
     }

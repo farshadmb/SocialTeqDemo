@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class HomeViewModel: ObservableObject {
+final class HomeViewModel: ObservableObject, Identifiable {
     
     @Published var state: State = .idle
     
@@ -22,7 +22,7 @@ final class HomeViewModel: ObservableObject {
     enum State {
         case idle
         case loading
-        case loaded(output: Any)
+        case loaded(output: Output)
         case error(String)
     }
     
@@ -34,9 +34,12 @@ final class HomeViewModel: ObservableObject {
         case select(item: Any)
     }
     
-    init(state: State = .idle, dataService: Service) {
+    let diContainer: AppDIContainer
+    
+    init(state: State = .idle, dataService: Service, container: AppDIContainer) {
         self.state = state
         self.service = dataService
+        self.diContainer = container
     }
     
     func send(event: Event) {
@@ -60,20 +63,39 @@ final class HomeViewModel: ObservableObject {
     
     private func fetchHomeData() {
         
-        typealias Output = AnyPublisher<[HomeModel],Error>
+        typealias Output = AnyPublisher<HomeModel,Error>
         
-        let output : Output = service.fetchAll()
-        output.catch {[weak self] error -> AnyPublisher<[HomeModel], Never> in
+        let output : Output = service.get()
+        output.catch {[weak self] error -> AnyPublisher<HomeModel, Never> in
             self?.state = .error(error.localizedDescription)
             return Empty(completeImmediately: true).eraseToAnyPublisher()
         }
-        .map { _ in State.loaded(output: [ServiceViewModel]()) }
+        .map { value in
+            let output = HomeViewModel.Output(title: value.title,
+                                              subTitle: value.subTitle,
+                                              services: (value.categories ?? []).compactMap { ServiceViewModel(state: .idle,
+                                                                                                                    model: $0,
+                                                                                                                    dataService: type(of: self.diContainer).serviceDataService) },
+                                              promotions: (value.promotions ?? []).map { PromotionViewModel(model: $0) })
+            return State.loaded(output: output)
+        }
         .subscribe(on: DispatchQueue.main)
         .receive(on: RunLoop.main)
         .assign(to: \.state,on: self)
         .store(in: &cancelBag)
         
         
+    }
+    
+}
+
+extension HomeViewModel {
+    
+    struct Output {
+        let title: String
+        let subTitle: String
+        let services: [ServiceViewModel]
+        let promotions: [PromotionViewModel]
     }
     
 }

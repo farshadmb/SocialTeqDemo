@@ -14,6 +14,11 @@ struct ServiceItemView: View {
     @State var descriptions: String = "Carwash"
     @State var extraInfo: String = "Basic | Eco | Pro | VIP"
     @State var color = Color.Alert.error
+    @State var badge: String = ""
+    @State var hasBadge: Bool = false
+    @State var image: URL? = nil
+    
+    @ObservedObject var viewModel: ServiceViewModel
     
     var body: some View {
         CardView {
@@ -21,9 +26,15 @@ struct ServiceItemView: View {
                 HStack(alignment: .top) {
                     Image("large")
                         .resizable()
+                        .fetchingRemoteImage(from: image)
                         .frame(width: 58, height: 50)
+                    
                     Spacer(minLength: 24.0)
-                    TextBadgeView(text: "NEW", color: .redColor)
+                    if hasBadge {
+                        TextBadgeView(text: badge, color: .redColor)
+                    }else {
+                        EmptyView()
+                    }
                 }
                 Spacer(minLength: 28.0)
                 VStack(alignment: .leading) {
@@ -53,15 +64,30 @@ struct ServiceItemView: View {
             }
         }
         .frame(maxWidth: 171, maxHeight: 190)
+        .onAppear(perform: observeState)
         
-        
+    }
+    
+    private func observeState() {
+        switch viewModel.state {
+        case .load(output: let output):
+            title = output.title
+            descriptions = output.subTitle
+            extraInfo = output.description
+            badge = output.badgeString
+            hasBadge = !badge.isEmpty
+            image = output.image
+            
+        default:
+            return
+        }
     }
 }
 
 struct ServiceItemView_Previews: PreviewProvider {
     static var previews: some View {
         HStack(alignment: .top) {
-            ServiceItemView()
+            
         }
     }
 }

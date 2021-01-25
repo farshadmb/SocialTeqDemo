@@ -23,13 +23,13 @@ struct HomeDataService: Service {
         self.decoder = decoder
     }
     
-    func fetchAll<T>() -> Output<[T]> where T : Decodable {
+    func get<T>() -> Output<T> where T : Decodable {
         
-        return AnyPublisher<[T],Error>.create { (observer) -> Disposable in
+        return AnyPublisher<T,Error>.create { (observer) -> Disposable in
             let request = APIRequest(url:"https://api-dot-rafiji-staging.appspot.com/customer/v2/home", method: .get)
             let task = self.networkService.send(request: request,
                                      decoder: self.decoder,
-                                     interceptor: self.interceptor) { (result: Result<[T],Error>) in
+                                     interceptor: self.interceptor) { (result: Result<T,Error>) in
                 switch result {
                 case .success(let value):
                     observer.onNext(value)

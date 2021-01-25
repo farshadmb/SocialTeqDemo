@@ -20,4 +20,10 @@ final class RootViewModel: ObservableObject {
         case didSelectTabBar(atIndex: Int)
     }
     
+    let diContainer: AppDIContainer
+    
+    init(container: AppDIContainer) {
+        diContainer = container
+    }
+    
 }
